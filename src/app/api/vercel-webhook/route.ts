@@ -58,6 +58,11 @@ async function sendDiscordMessageFor(vercelEvent: VercelWebhookEvent) {
     const githubCommitUrl = `https://github.com/${githubOrg}/${githubCommitRepo}/commit/${githubCommitSha}`
     const githubCommitMessage = vercelEvent.payload.deployment.meta["githubCommitMessage"];
 
+
+    if (gitBranch !== 'main') {
+        return;
+    }
+    
     const discordMessage = {
         content: null,
         embeds: [{
