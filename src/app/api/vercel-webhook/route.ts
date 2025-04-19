@@ -61,23 +61,23 @@ async function sendDiscordMessageFor(vercelEvent: VercelWebhookEvent) {
     const discordMessage = {
         content: null,
         embeds: [{
-            title: `Deployment of ${name} in ${gitBranch.toUpperCase()}: ${state}.`,
+            title: `Deployment of ${name} in ${gitBranch}: ${state}.`,
             url: deploymentDashboardUrl,
-            description: `The deployment for ${name} is now ${state}.`,
+            // description: `The deployment for ${name} is now ${state}.`,
             color: state === 'SUCCEEDED' ? 3066993 : 15158332, // Green for success, red for failure
             fields: [
                 {
                     name: 'Project',
                     value: `[${name}](${projectUrl})`,
                 },
-                {
+                /* {
                     name: 'Branch',
                     value: gitBranch,
                 },
                 {
                     name: 'Commit',
                     value: `[${githubCommitSha}](${githubCommitUrl})`,
-                },
+                },*/
                 {
                     name: 'Commit Message',
                     value: githubCommitMessage,
