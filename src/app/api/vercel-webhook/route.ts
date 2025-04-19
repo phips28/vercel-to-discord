@@ -71,11 +71,11 @@ async function sendDiscordMessageFor(vercelEvent: VercelWebhookEvent) {
             // description: `The deployment for ${name} is now ${state}.`,
             color: state === 'SUCCEEDED' ? 3066993 : 15158332, // Green for success, red for failure
             fields: [
-                {
+                /* {
                     name: 'Project',
                     value: `[${name}](${projectUrl})`,
                 },
-                /* {
+                {
                     name: 'Branch',
                     value: gitBranch,
                 },
